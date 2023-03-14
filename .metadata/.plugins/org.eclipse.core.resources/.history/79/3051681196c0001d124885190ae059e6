@@ -1,0 +1,31 @@
+package seleniumDemos;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class FlipKart2 {
+	
+	static WebDriver driver;
+
+	public static void main(String[] args) {
+		openBrowser();
+		
+
+	}
+	
+	public static void openBrowser()
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "./drivers_folder/chromedriver.exe");
+		System.setProperty("webdriver.http.factory", "jdk-http-client");
+		driver = new ChromeDriver();
+		
+		driver.get("https://www.flipkart.com/");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
+
+}

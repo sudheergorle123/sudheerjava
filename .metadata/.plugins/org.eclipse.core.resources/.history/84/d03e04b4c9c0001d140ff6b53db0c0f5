@@ -1,0 +1,34 @@
+package seleniumDemos;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+
+public class FlipKart2 {
+	
+	public static WebDriver driver;
+
+	public static void main(String[] args) {
+		openBrowser();
+		
+
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static void openBrowser()
+	{
+		
+		System.setProperty("webdriver.chrome.driver", "./drivers_folder/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.get("https://www.amazon.in/s?k=amaozn&adgrpid=57434613725&ext_vrnc=hi&gclid=Cj0KCQiAjbagBhD3ARIsANRrqEtSZ6UMlhbsRe9oVu-oEWla-jNU2ssw1F34CurcM60bXe2uNxVwkuYaAi7bEALw_wcB&hvadid=617724335989&hvdev=c&hvlocphy=1007768&hvnetw=s&hvqmt=b&hvrand=11994733699718446914&hvtargid=kwd-317907835099&hydadcr=15413_2322997&tag=googinhydr1-21&ref=pd_sl_2j92my16t3_b");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		
+	}
+
+}

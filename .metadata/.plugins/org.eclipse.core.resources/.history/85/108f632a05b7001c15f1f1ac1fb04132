@@ -1,0 +1,28 @@
+package friday08;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BaseClass1 {
+	
+	public static WebDriver driver;
+	
+	public void openBrowser()
+	{
+		String browser = "chrome";
+		String url ="http://127.0.0.1:81/login.do";
+		if(browser.equals("chrome"))
+		{
+			System.setProperty("webDriver.chrome.driver", "C:\\drivers1\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+		else if(browser.equals("firefox"))
+		{
+			System.setProperty("webDriver.gecko.driver", "C:\\drivers1\\geckodriver.exe");
+			driver = new FirefoxDriver();
+
+		}
+		
+	}
+
+}
